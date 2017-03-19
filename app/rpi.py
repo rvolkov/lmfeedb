@@ -109,10 +109,15 @@ class RPI:
         # we can't use strength in hardvare v1
         vst = vstrength
         vst = 0
+        vl = 0
+        if(vlen == 'undefined'):
+            vl = 1
+        else:
+            vl = vlen
         GPIO.output(self.gpio[finger],True)    # switch on
         print("GPIO.output(",self.gpio[finger],",True)")
         # record timeout
-        self.vms[self.gpio[finger]] = vlen
+        self.vms[self.gpio[finger]] = vl
     # stop vibration immediately and clear timeout
     def stop(self,finger):
         # stop vibration
