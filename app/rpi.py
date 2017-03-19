@@ -107,8 +107,11 @@ class RPI:
     def start(self,finger,vstrength,vlen):
         # start vibration
         # we can't use strength in hardvare v1
-        vst = vstrength
         vst = 0
+        if(vstrength == 'undefined'):
+            vst = 1
+        else:
+            vst = vstrength
         vl = 0
         if(vlen == 'undefined'):
             vl = 1
