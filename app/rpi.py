@@ -24,7 +24,7 @@ POINT_OF_TIME = 0.2
 
 class RPI:
     def __init__(self):
-        GPIO.setmode(GPIO.BOARD)
+        GPIO.setmode(GPIO.BCM)
         GPIO.setup(L_THUMB, GPIO.OUT)
         GPIO.setup(L_THUMB, GPIO.OUT)
         GPIO.setup(L_THUMB, GPIO.OUT)
