@@ -84,7 +84,7 @@ class RPI:
             if v > 0:
                 v = v-1
                 if v == 0:
-                    #GPIO.output(key,False)    # switch off
+                    GPIO.output(key,False)    # switch off
                     print("GPIO.output(",key,",False)")
                 self.vms[key] = str(v) # update
         self.ttt = threading.Timer(POINT_OF_TIME, self.check_vibromotor)
