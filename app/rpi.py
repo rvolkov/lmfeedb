@@ -4,14 +4,14 @@ from app import app
 import RPi.GPIO as GPIO
 
 # GPIO ports on RPI for fingers
-L_THUMB      = 4
+L_THUMB      = 19
 L_INDEX      = 17
 L_MIDDLE     = 27
 L_RING       = 22
 L_PINKY      = 5
 L_PALM       = 6
 L_BACK       = 13
-R_THUMB      = 18
+R_THUMB      = 21
 R_INDEX      = 23
 R_MIDDLE     = 24
 R_RING       = 25
