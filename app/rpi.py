@@ -4,14 +4,14 @@ from app import app
 import RPi.GPIO as GPIO
 
 # GPIO ports on RPI for fingers
-L_THUMB      = 4
+L_THUMB      = 19
 L_INDEX      = 17
 L_MIDDLE     = 27
 L_RING       = 22
 L_PINKY      = 5
 L_PALM       = 6
 L_BACK       = 13
-R_THUMB      = 18
+R_THUMB      = 21
 R_INDEX      = 23
 R_MIDDLE     = 24
 R_RING       = 25
@@ -26,19 +26,33 @@ class RPI:
     def __init__(self):
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(L_THUMB, GPIO.OUT)
-        GPIO.setup(L_THUMB, GPIO.OUT)
-        GPIO.setup(L_THUMB, GPIO.OUT)
-        GPIO.setup(L_THUMB, GPIO.OUT)
-        GPIO.setup(L_THUMB, GPIO.OUT)
-        GPIO.setup(L_THUMB, GPIO.OUT)
-        GPIO.setup(L_THUMB, GPIO.OUT)
+        GPIO.output(L_THUMB,False)
+        GPIO.setup(L_INDEX, GPIO.OUT)
+        GPIO.output(L_INDEX,False)
+        GPIO.setup(L_MIDDLE, GPIO.OUT)
+        GPIO.output(L_MIDDLE,False)
+        GPIO.setup(L_RING, GPIO.OUT)
+        GPIO.output(L_RING,False)
+        GPIO.setup(L_PINKY, GPIO.OUT)
+        GPIO.output(L_PINKY,False)
+        GPIO.setup(L_PALM, GPIO.OUT)
+        GPIO.output(L_PALM,False)
+        GPIO.setup(L_BACK, GPIO.OUT)
+        GPIO.output(L_BACK,False)
         GPIO.setup(R_THUMB, GPIO.OUT)
-        GPIO.setup(R_THUMB, GPIO.OUT)
-        GPIO.setup(R_THUMB, GPIO.OUT)
-        GPIO.setup(R_THUMB, GPIO.OUT)
-        GPIO.setup(R_THUMB, GPIO.OUT)
-        GPIO.setup(R_THUMB, GPIO.OUT)
-        GPIO.setup(R_THUMB, GPIO.OUT)
+        GPIO.output(R_THUMB,False)
+        GPIO.setup(R_INDEX, GPIO.OUT)
+        GPIO.output(R_INDEX,False)
+        GPIO.setup(R_MIDDLE, GPIO.OUT)
+        GPIO.output(R_MIDDLE,False)
+        GPIO.setup(R_RING, GPIO.OUT)
+        GPIO.output(R_RING,False)
+        GPIO.setup(R_PINKY, GPIO.OUT)
+        GPIO.output(R_PINKY,False)
+        GPIO.setup(R_PALM, GPIO.OUT)
+        GPIO.output(R_PALM,False)
+        GPIO.setup(R_BACK, GPIO.OUT)
+        GPIO.output(R_BACK,False)
         self.gpio = {
             "L_THUMB":  L_THUMB,
             "L_INDEX":  L_INDEX,
