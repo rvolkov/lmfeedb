@@ -11,7 +11,7 @@ try:
     host = s.getsockname()[0]
     s.close()
 except:
-    host = '127.0.0.1'
+    host = '0.0.0.0'
 os.environ['LMFEEDB_INT_IP'] = host
 app.run(host=host,debug=True,port=5000)
 #app.run(host='192.168.250.1',debug=True,port=80)
