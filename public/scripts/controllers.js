@@ -89,7 +89,7 @@ controllers
       });
     };
     $scope.starttest = function() {
-      $http.post(getapiroot($location) + '/starttest')
+      $http.post(getapiroot($location) + '/api/v1/starttest')
       .then(function onSuccess(response) {
           var data = response.data;
           $scope.error = '';
@@ -97,7 +97,7 @@ controllers
       });
     };
     $scope.stoptest = function() {
-      $http.post(getapiroot($location) + '/stoptest')
+      $http.post(getapiroot($location) + '/api/v1/stoptest')
       .then(function onSuccess(response) {
           var data = response.data;
           $scope.error = '';
