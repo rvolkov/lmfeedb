@@ -7,7 +7,7 @@ from app import rpi
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
 
 RPI = rpi.RPI()
-RPI.check_vibromotor()
+RPI.check_vibromotor()  # start thread
 
 # ==== entry points for one-page web application - no auth ====
 @app.route('/')
@@ -67,10 +67,34 @@ def call_stop(finger):
     return jsonify( { 'message': 'ok' } ), 200
 
 # post
+@app.route('/stop/<finger>', methods=['POST'])
+def call_nosec_stop(finger):
+    RPI.stop(finger)
+    return jsonify( { 'message': 'ok' } ), 200
+
+# post
 @app.route('/api/v1/start/<finger>/<s>/<l>', methods=['POST'])
 @jwt_required()
 def call_start(finger, s, l):
     RPI.start(finger, s, l)
+    return jsonify( { 'message': 'ok' } ), 200
+
+# post
+@app.route('/start/<finger>/<s>/<l>', methods=['POST'])
+def call_nosec_start(finger, s, l):
+    RPI.start(finger, s, l)
+    return jsonify( { 'message': 'ok' } ), 200
+
+@app.route('/api/v1/starttest', methods=['POST'])
+@jwt_required()
+def call_starttest():
+    RPI.starttest()
+    return jsonify( { 'message': 'ok' } ), 200
+
+@app.route('/api/v1/stoptest', methods=['POST'])
+@jwt_required()
+def call_stoptest():
+    RPI.stoptest()
     return jsonify( { 'message': 'ok' } ), 200
 
 # ==== end of API calls ====

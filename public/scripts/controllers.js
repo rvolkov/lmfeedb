@@ -79,7 +79,7 @@ controllers
           $scope.error = '';
           error_detected = false;
       });
-    }
+    };
     $scope.clearVibration = function(finger) {
       $http.post(getapiroot($location) + '/api/v1/stop/'+finger)
       .then(function onSuccess(response) {
@@ -87,6 +87,22 @@ controllers
           $scope.error = '';
           error_detected = false;
       });
-    }
+    };
+    $scope.starttest = function() {
+      $http.post(getapiroot($location) + '/starttest')
+      .then(function onSuccess(response) {
+          var data = response.data;
+          $scope.error = '';
+          error_detected = false;
+      });
+    };
+    $scope.stoptest = function() {
+      $http.post(getapiroot($location) + '/stoptest')
+      .then(function onSuccess(response) {
+          var data = response.data;
+          $scope.error = '';
+          error_detected = false;
+      });
+    };
   }
 ]);

@@ -17,6 +17,13 @@
                 <span class="glyphicon glyphicon-log-out" area-hidden="true"></span> Log Out
             </button>
             <hr>
+            <button type="button" class="btn btn-link" ng-click="starttest()">
+                <span class="glyphicon glyphicon-play" area-hidden="true"></span> Start Test
+            </button>
+            <button type="button" class="btn btn-link" ng-click="stoptest()">
+                <span class="glyphicon glyphicon-stop" area-hidden="true"></span> Stop Test
+            </button>
+            <hr>
             <div class="col-xs-6">
                 <div class="panel panel-info">
                     <div class="panel-heading">
@@ -58,7 +65,7 @@
                             <button type="button" class="btn btn-success" ng-click="setVibration('L_PINKY',theL_PINKY_str,theL_PINKY_len)">start</button>
                             <button type="button" class="btn btn-success" ng-click="clearVibration('L_PINKY')">stop</button>
                         </li>
-                        <li class="list-group-item">
+                        <!--li class="list-group-item">
                             <strong>Palm</strong>
                             t<input ng-model="theL_PALM_len" type="number" min="1" max="100" default="1" required>
                             s<input ng-model="theL_PALM_str" type="number" min="1" max="10" default="1" required>
@@ -71,7 +78,7 @@
                             s<input ng-model="theL_BACK_str" type="number" min="1" max="10" default="1" required>
                             <button type="button" class="btn btn-success" ng-click="setVibration('L_BACK',theL_BACK_str,theL_BACK_len)">start</button>
                             <button type="button" class="btn btn-success" ng-click="clearVibration('L_BACK')">stop</button>
-                        </li>
+                        </li-->
                     </ul>
                 </div>
             </div>
@@ -116,7 +123,7 @@
                             <button type="button" class="btn btn-success" ng-click="setVibration('R_PINKY',theR_PINKY_str,theR_PINKY_len)">start</button>
                             <button type="button" class="btn btn-success" ng-click="clearVibration('R_PINKY')">stop</button>
                         </li>
-                        <li class="list-group-item">
+                        <!--li class="list-group-item">
                             <strong>Palm</strong>
                             t<input ng-model="theR_PALM_len" type="number" min="1" max="100" default="1" required>
                             s<input ng-model="theR_PALM_str" type="number" min="1" max="10" default="1" required>
@@ -129,7 +136,7 @@
                             s<input ng-model="theR_BACK_str" type="number" min="1" max="10" default="1" required>
                             <button type="button" class="btn btn-success" ng-click="setVibration('R_BACK',theR_BACK_str,theR_BACK_len)">start</button>
                             <button type="button" class="btn btn-success" ng-click="clearVibration('R_BACK')">stop</button>
-                        </li>
+                        </li-->
                     </ul>
                 </div>
                 <button type="button" class="btn btn-link" ng-click="logout()">
