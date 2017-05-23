@@ -72,18 +72,18 @@ class RPI:
             #"R_BACK":   R_BACK
         }
         self.vms = {
-            L_THUMB:  0,
-            L_INDEX:  0,
-            L_MIDDLE: 0,
-            L_RING:   0,
-            L_PINKY:  0,
+            "L_THUMB":  0,
+            "L_INDEX":  0,
+            "L_MIDDLE": 0,
+            "L_RING":   0,
+            "L_PINKY":  0,
             #L_PALM:   0,
             #L_BACK:   0,
-            R_THUMB:  0,
-            R_INDEX:  0,
-            R_MIDDLE: 0,
-            R_RING:   0,
-            R_PINKY:  0
+            "R_THUMB":  0,
+            "R_INDEX":  0,
+            "R_MIDDLE": 0,
+            "R_RING":   0,
+            "R_PINKY":  0
             #R_PALM:   0,
             #R_BACK:   0
         }
@@ -98,17 +98,17 @@ class RPI:
     def check_vibromotor(self):
         #print(time.ctime())
         #print(self.vms)
-        self.tttlock.acquire()
         for key,val in self.vms.items():
             v = int(val)
             #print("key=",key," val=",v)
             if v > 0:
                 v = v-1
                 if v == 0:
-                    GPIO.output(key,False)    # switch off
+                    GPIO.output(self.gpio[key],False)    # switch off
                     #print("GPIO.output(",key,",False)")
+                self.tttlock.acquire()
                 self.vms[key] = str(v) # update
-        self.tttlock.release()
+                self.tttlock.release()
         self.ttt = threading.Timer(POINT_OF_TIME, self.check_vibromotor)
         self.ttt.start()
         return
@@ -148,13 +148,13 @@ class RPI:
         return
     def starttest(self):
         for key,val in self.vms.items():
-            GPIO.output(key,True)
+            GPIO.output(self.gpio[key],True)
         #self.tes = threading.Timer(POINT_OF_TIME, self.startttest)
         #self.tes.start()
         return
     def stoptest(self):
         for key,val in self.vms.items():
-            GPIO.output(key,False)    # switch off
+            GPIO.output(self.gpio[key],False)    # switch off
         #self.tes.cancel()
         return
 
