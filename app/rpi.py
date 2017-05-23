@@ -20,7 +20,7 @@ R_PALM       = 16
 R_BACK       = 20
 
 # timeout for check and also point of time
-POINT_OF_TIME = 0.5
+POINT_OF_TIME = 1
 
 class RPI:
     def __init__(self):
