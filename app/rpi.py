@@ -92,7 +92,7 @@ class RPI:
     # if timer is 0, we need to stop vibration
     def init_check(self):
         self.tttlock = threading.Lock()
-        self.teslock = threading.Lock()
+        #self.teslock = threading.Lock()
     def check_vibromotor(self):
         #print(time.ctime())
         #print(self.vms)

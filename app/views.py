@@ -7,6 +7,7 @@ from app import rpi
 template_folder = os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates")
 
 RPI = rpi.RPI()
+RPI.init_check()
 RPI.check_vibromotor()  # start thread
 
 # ==== entry points for one-page web application - no auth ====
