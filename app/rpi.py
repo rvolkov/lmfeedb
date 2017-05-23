@@ -14,8 +14,10 @@ L_PINKY      = 5
 R_THUMB      = 18
 R_INDEX      = 23
 R_MIDDLE     = 24
-R_RING       = 25
-R_PINKY      = 12
+R_RING       = 12
+R_PINKY      = 25
+#R_RING       = 25
+#R_PINKY      = 12
 #R_PALM       = 16
 #R_BACK       = 20
 
