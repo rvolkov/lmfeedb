@@ -15,7 +15,7 @@ RESTBOX_POINT_OF_TIME = 3
 class RESTbox:
     def __init__(self):
         # class variables
-        self.host = 'ltrcrt2225.herokuapp.com'
+        self.host = '127.0.0.1'
         self.ip = os.environ['LMFEEDB_INT_IP']
         self.base_url = 'http://'+host+':80/api/gloves/lmfeedb/gloves1/'+self.ip
         self.proxies = {
