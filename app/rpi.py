@@ -168,7 +168,7 @@ class RPI:
     def start_api(self, findex):
         self.start(self.calc_finger(findex), 1, 1)
         return
-    def stop_api(findex):
+    def stop_api(self, findex):
         self.stop(self.calc_finger(findex))
         return
     def __del__(self):

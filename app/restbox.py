@@ -44,6 +44,7 @@ class RESTbox:
             #for gid, gstatus in json_data["message"]:
             self.tttlock.acquire()
             iddd = int(ggg["id"])
+            print("iddd=",iddd)
             if ggg["status"] == 1:
                 self.RPI.start_api(iddd)
             else:
