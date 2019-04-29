@@ -43,10 +43,11 @@ class RESTbox:
             print("ggg.id=",ggg["id"])
             #for gid, gstatus in json_data["message"]:
             self.tttlock.acquire()
+            iddd = int(ggg["id"])
             if ggg["status"] == 1:
-                self.RPI.start_api(ggg["id"])
+                self.RPI.start_api(iddd)
             else:
-                self.RPI.stop_api(ggg["id"])
+                self.RPI.stop_api(iddd)
             self.tttlock.release()
         # restart this function
         self.ttt2 = threading.Timer(RESTBOX_POINT_OF_TIME, self.check_controller)
