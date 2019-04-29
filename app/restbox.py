@@ -20,7 +20,7 @@ class RESTbox:
         self.host = os.environ['LMFEEDB_CONTROLLER_HOST']
         self.ip = os.environ.get('LMFEEDB_INT_IP','0.0.0.0')
         self.passphrase = os.environ['LMFEEDB_CONTROLLER_PASS']
-        self.base_url = 'http://'+host+'/api/gloves/gloves1/'+self.passphrase+'/'+self.ip
+        self.base_url = 'http://'+self.host+'/api/gloves/gloves1/'+self.passphrase+'/'+self.ip
         self.proxies = {
             "http": None,
             "https": None,
