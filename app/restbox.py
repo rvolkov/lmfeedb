@@ -38,7 +38,7 @@ class RESTbox:
         # install vibration on fingers
         for gid, gstatus in json_data:
             self.tttlock.acquire()
-            if gstatus = 1:
+            if gstatus == 1:
                 self.RPI.start_api(gid)
             else:
                 self.RPI.stop_api(gid)
