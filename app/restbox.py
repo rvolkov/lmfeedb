@@ -2,6 +2,7 @@
 # 1. report to RESTbox controller own internal IP
 # 2. ask it which finger vibration need to enable
 import sys
+import os
 import json
 import requests
 #from requests.packages.urllib3.exceptions import InsecureRequestWarning
