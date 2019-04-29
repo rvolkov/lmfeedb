@@ -143,6 +143,34 @@ class RPI:
         self.vms[self.gpio[finger]] = 0
         self.tttlock.release()
         return
+    def calc_finger(self, findex):
+        if findex == 0:
+            return "L_THUMB"
+        if findex == 1:
+            return "L_INDEX"
+        if findex == 2:
+            return "L_MIDDLE"
+        if findex == 3:
+            return "L_RING"
+        if findex == 4:
+            return "L_PINKY"
+        if findex == 5:
+            return "R_THUMB"
+        if findex == 6:
+            return "R_INDEX"
+        if findex == 7:
+            return "R_MIDDLE"
+        if findex == 8:
+            return "R_RING"
+        if findex == 9:
+            return "R_PINKY"
+        return "L_THUMB"
+    def start_api(self, findex):
+        self.start(self.calc_finger(findex), 1, 1)
+        return
+    def stop_api(findex):
+        self.stop(self.calc_finger(findex))
+        return
     def __del__(self):
         self.ttt.cancel()
         return
