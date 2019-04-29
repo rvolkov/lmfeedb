@@ -38,6 +38,9 @@ class RESTbox:
         print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
         # install vibration on fingers
         for ggg in json_data["message"]:
+            print("ggg=",ggg)
+            print("ggg.status=",ggg["status"])
+            print("ggg.id=",ggg["id"])
             #for gid, gstatus in json_data["message"]:
             self.tttlock.acquire()
             if ggg["status"] == 1:
