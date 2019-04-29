@@ -38,13 +38,13 @@ class RESTbox:
         print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
         # install vibration on fingers
         for ggg in json_data["message"]:
-            print("ggg=",ggg)
-            print("ggg.status=",ggg["status"])
-            print("ggg.id=",ggg["id"])
+            #print("ggg=",ggg)
+            #print("ggg.status=",ggg["status"])
+            #print("ggg.id=",ggg["id"])
             #for gid, gstatus in json_data["message"]:
             self.tttlock.acquire()
             iddd = int(ggg["id"])
-            print("iddd=",iddd)
+            #print("iddd=",iddd)
             if ggg["status"] == 1:
                 self.RPI.start_api(iddd)
             else:
