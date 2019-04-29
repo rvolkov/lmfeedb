@@ -37,7 +37,7 @@ class RESTbox:
         json_data = json.loads(resp.text)
         print(json.dumps(json_data, sort_keys=True, indent=4, separators=(',', ': ')))
         # install vibration on fingers
-        for gid, gstatus in json_data:
+        for gid, gstatus in json_data.message:
             self.tttlock.acquire()
             if gstatus == 1:
                 self.RPI.start_api(gid)
